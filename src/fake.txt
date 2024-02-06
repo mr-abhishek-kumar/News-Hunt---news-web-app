@@ -1,0 +1,61 @@
+// business
+// entertainment
+// general
+// health
+// science
+// sports
+// technology
+
+
+
+// import './App.css';
+
+// import React, { Component } from 'react'
+// import Navbar from './component/Navbar';
+// import News from './component/News';
+// import { BrowserRouter, Route, Routes } from 'react-router-dom';
+
+// // import {BrowserRouter, Routes, Route, } from 'react-router-dom';
+
+
+// export default class App extends Component {
+
+//   constructor(){
+//     super();
+//     this.state ={
+//       category:"general",
+//     }
+//   }
+
+//   setCategory = (cate)=>{
+//     this.setState({category:cate});
+//     console.log("setCategory fun executed by category"+cate);
+//   }
+
+
+
+//   render() {
+//     return (
+//       <div className='container'>
+//        <Navbar setCategory={this.setCategory}/>
+//        <News pageSize={5} country='us' category={this.state.category}/>
+
+//         {/* <BrowserRouter basename="/app">
+//           <Routes>
+//             <Route path="/" />
+//           </Routes>
+//         </BrowserRouter> */}
+
+//         <BrowserRouter>
+//           <Route>
+//             <Routes path='/' element={} />
+//           </Route>
+//         </BrowserRouter>
+
+
+
+
+//       </div>
+//     )
+//   }
+// }
