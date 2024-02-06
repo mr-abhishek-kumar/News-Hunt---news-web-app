@@ -31,8 +31,8 @@ export default class App extends Component {
         <BrowserRouter>
         <Navbar setCategory={this.setCategory}/>
           <Routes>
-            <Route path={this.state.category} element={<News key={this.state.category} pageSize={5} country='us' category={this.state.category}/>} />
-            <Route path='/' element={<News key='/' pageSize={5} country='us' category='general'/>} />
+            <Route path={this.state.category} element={<News key={this.state.category} pageSize={7} country='us' category={this.state.category}/>} />
+            <Route path='/' element={<News key='/' pageSize={7} country='us' category='general'/>} />
           </Routes>
         </BrowserRouter>
 
