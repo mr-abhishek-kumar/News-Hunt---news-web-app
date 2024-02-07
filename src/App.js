@@ -9,6 +9,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 
 export default class App extends Component {
+  pageSize =8;
 
   constructor(){
     super();
@@ -20,6 +21,7 @@ export default class App extends Component {
   setCategory = (cate)=>{
     this.setState({category:cate});
     console.log("setCategory fun executed by category"+cate);
+    document.title=cate.toUpperCase()+"- NewsHunter".toUpperCase();
   }
 
 
@@ -29,10 +31,13 @@ export default class App extends Component {
       <div className='container'>
 
         <BrowserRouter>
-        <Navbar setCategory={this.setCategory}/>
+          <Navbar setCategory={this.setCategory}/>
           <Routes>
-            <Route path={this.state.category} element={<News key={this.state.category} pageSize={7} country='us' category={this.state.category}/>} />
-            <Route path='/' element={<News key='/' pageSize={7} country='us' category='general'/>} />
+          
+            <Route path={this.state.category} element={<News key={this.state.category} pageSize={this.pageSize} country='us' category={this.state.category}/>} />
+
+            <Route path='/' element={<News key='/' pageSize={this.pageSize} country='us' category='general'/>} />
+
           </Routes>
         </BrowserRouter>
 
