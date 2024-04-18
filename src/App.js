@@ -1,7 +1,6 @@
-
 import './App.css';
 
-import React, { Component } from 'react'
+import React, { useState } from 'react'
 import Navbar from './component/Navbar';
 import News from './component/News';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
@@ -10,52 +9,43 @@ import LoadingBar from 'react-top-loading-bar'
 
 
 
-export default class App extends Component {
-  pageSize =5;
-  apiKey=process.env.REACT_APP_API_KEY
-  state={
-    progress:0,
-  }
+const App=(props) =>{
 
-  setProgress = (progress)=>{
-    this.setState({progress:progress});
-  }
+  const pageSize =5;
+  const apiKey=process.env.REACT_APP_API_KEY
 
-  constructor(){
-    super();
-    this.state ={
-      category:"general",
-    }
-  }
+  const [progress, setProgress] = useState(0);
+  const [category, setCategoryState] = useState("general");
 
-  setCategory = (cate)=>{
-    this.setState({category:cate});
+
+
+
+  const setCategory = (cate)=>{
+    setCategoryState(cate);
     console.log("setCategory fun executed by category"+cate);
     document.title=cate.toUpperCase()+"- NewsHunter".toUpperCase();
   }
 
 
 
-  render() {
     return (
       <div className='container'>
 
         <BrowserRouter>
-          <Navbar setCategory={this.setCategory}/>
-          <LoadingBar color='#f11946' progress={this.state.progress}  onLoaderFinished={() => this.setProgress(0)}/>
+          <Navbar setCategory={setCategory}/>
+          <LoadingBar color='#f11946' progress={progress}  onLoaderFinished={() => setProgress(0)}/>
           <Routes>
           
-            <Route path={this.state.category} element={<News apiKey={this.apiKey} setProgress={this.setProgress} key={this.state.category} pageSize={this.pageSize} country='us' category={this.state.category}/>} />
+            <Route path={category} element={<News apiKey={apiKey} setProgress={setProgress} key={category} pageSize={pageSize} country='us' category={category}/>} />
 
-            <Route path='/' element={<News apiKey={this.apiKey} setProgress={this.setProgress} key='/' pageSize={this.pageSize} country='us' category='general'/>} />
+            <Route path='/' element={<News apiKey={apiKey} setProgress={setProgress} key='/' pageSize={pageSize} country='us' category='general'/>} />
 
           </Routes>
         </BrowserRouter>
-
-
-
-
+e
       </div>
     )
   }
-}
+
+
+  export default App;

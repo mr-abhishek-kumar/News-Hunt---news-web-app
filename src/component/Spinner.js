@@ -1,9 +1,7 @@
 import React, { Component } from 'react'
 
-export class Spinner extends Component {
-  static propTypes = {}
+const Spinner=()=> {
 
-  render() {
     return (
       <div>
         <h2 className='text-center text-warning'>
@@ -11,7 +9,6 @@ export class Spinner extends Component {
         </h2>
       </div>
     )
-  }
 }
 
 export default Spinner
