@@ -5,8 +5,8 @@
 + This project is a meaningfull implementation of my development skills as it facilitates its user to read news which is a real world use case.
 
 # How it is developed.......
-1. Frontend of this project is designed using `React JS`.
-2. For news data and backend, i have used a [News API](https://content.api.news/v3/.......) which is free of cost to use in projects.
+1. Frontend of this project is designed using **`React JS`**.
+2. For news data and backend, i have used a [News API](https://newsapi.org/v2/top-headlines?Country=us&apiKey=0411ee05757d4caeafbd689f1a70672b) which is free of cost to use in projects.
 3. Problem of using this API is that it can be only used during development but it can not be used in hosted server.
 4. There are two main endpoints in this api.
 5. I have used some of them endpoints to make project more interactive.
@@ -29,7 +29,7 @@ Find sources that display news in a specific country. Possible options: `ae` `ar
 # How to run this project on local system.....
 
 ### Step 1:-
-+ First of all you you have to setup you development environment to run the javascript ode on local system.
++ First of all you you have to setup you development environment to run the javascript code on local system.
 + To set up the environment follow the steps:-
 
 Download NodeJs
@@ -39,12 +39,20 @@ Download NodeJs
 
 ### Step 3:-
 + Clone this repository to get the code from github
-+ To Clone this reposistory, open command prompt in folder and run these command one by one...
++ To Clone this reposistory, open folder in command prompt and run these command one by one...
 1. ``` js
-     git init
-   ```
-2. ``` js
      git clone https://github.com/mr-abhishek-kumar/News-Hunt---news-web-app.git
    ```
+
 ### Step 4:-
-+ Now run the code.......
++ Run the code
+> To run the code follow the steps...
+>  1. Change directory
+>  ``` js
+>    cd News-Hunt---news-web-app
+>  ```
+>  2. Open terminal in that directory
+>  3. Run the command in terminal
+>  ``` js
+>    npm start
+>  ```
